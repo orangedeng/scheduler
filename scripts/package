@@ -12,11 +12,11 @@ cd $(dirname $0)/../package
 TAG=${TAG:-${IMAGE_VERSION}${SUFFIX}}
 REPO=${REPO:-rancher}
 
-if [ ! -e ../bin/storage ]; then
+if [ ! -e ../bin/linux/amd64/scheduler ]; then
     ../scripts/build
 fi
 
-cp ../bin/scheduler .
+cp ../bin/linux/amd64/scheduler .
 
 IMAGE=${REPO}/scheduler:${TAG}
 docker build -t ${IMAGE} .

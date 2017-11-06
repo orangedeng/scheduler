@@ -1,0 +1,3 @@
+FROM microsoft/nanoserver:10.0.14393.1593
+COPY scheduler.exe /
+CMD ["powershell","C:/scheduler.exe"]
